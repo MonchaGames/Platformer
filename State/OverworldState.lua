@@ -12,6 +12,7 @@ function OverworldState:initialize()
     self.world = bump.newWorld(32)
     self.block = {}
     self.world:add(self.block, 0, 400, 6000, 10)
+    self.level = Level:new("map", self.world)
 end
 
 function OverworldState:enter(params, parent)
@@ -29,6 +30,7 @@ end
 function OverworldState:update(dt)
     self.camera:update(dt)
     self.player:update(dt)
+    self.level:update(dt)
     if love.keyboard.isDown(' ') then
         self.parent:switch('State')
     end
@@ -36,6 +38,7 @@ end
 
 function OverworldState:draw()
     self.player:draw()
+    self.level:draw()
     love.graphics.rectangle('fill', 0, 400, 6000, 10)
 end
 
