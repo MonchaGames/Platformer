@@ -1,2 +1,2 @@
 all:
-	love /home/jam/love/platform
+	love /home/jam/love/Platformer

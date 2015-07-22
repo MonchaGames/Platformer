@@ -8,6 +8,7 @@ function Entity:initialize(GraphicsComponent, InputComponent, PhysicsComponent)
     self.y = 0
     self.vx = 0
     self.vy = 0
+    self.ground = false
     self.friction = 10
     self.speed = 7000
 

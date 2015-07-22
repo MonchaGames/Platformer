@@ -1,4 +1,5 @@
 local class = require 'middleclass'
+local Timer = require 'timer'
 
 require 'misc'
 
@@ -30,15 +31,18 @@ function PlayerInputComponent:initialize()
     self.down = false
     self.left = false
     self.right = false
+    self.timer = Timer.new()
 end
 
 function PlayerInputComponent:update(dt, Entity)
     assert(type(dt) == 'number')
     assert(type(Entity) == 'table')
+    self.timer.update(dt)
 
     local speed = Entity.speed or 50.
 
-    if self.up then
+    if self.up and Entity.ground then
+        self.timer.add(0.15, function() self.up = false end)
         Entity.vy = -1000    
     end
     if self.down then
@@ -106,6 +110,7 @@ function PlayerPhysicsComponent:update(dt, Entity)
         if v.normal.y < 0 then
             --resets velocity
             Entity.vy = 0
+            Entity.ground = true
         end
     end
     Entity.x = true_x
