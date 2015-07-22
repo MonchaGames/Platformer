@@ -1,1 +1,2 @@
-This is my fork, and will therefore likely be the most up to date version.
+Main branch.
+Go to https://github.com/flyingjam/Platformer/ for the latest version.
