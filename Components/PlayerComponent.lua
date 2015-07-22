@@ -43,7 +43,7 @@ function PlayerInputComponent:update(dt, Entity)
 
     if self.up and Entity.ground then
         self.timer.add(0.15, function() self.up = false end)
-        Entity.vy = -1000    
+        Entity.vy = -2000    
     end
     if self.down then
         Entity.vy = Entity.vy + speed * dt
@@ -106,6 +106,7 @@ function PlayerPhysicsComponent:update(dt, Entity)
     
     local true_x, true_y, cols, len = self.world:move(self, new_x, new_y)
     
+    Entity.ground = false
     for k, v in pairs(cols) do
         if v.normal.y < 0 then
             --resets velocity

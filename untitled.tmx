@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="21" tileheight="21">
+ <tileset firstgid="1" name="spritesheet" tilewidth="21" tileheight="21" spacing="2" margin="2">
+  <image source="spritesheet.png" width="692" height="692"/>
+ </tileset>
+ <layer name="coll" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2DEOACAIBDDi/x/tjjKoiTq0yYXJxZsgAgBg1NLknaqDlsJc/qcqu+9OAgAAwH32sX/o4h+6eOvGHcr9CgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGBdB9MPAKk=
+  </data>
+ </layer>
+</map>

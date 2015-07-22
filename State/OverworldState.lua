@@ -2,6 +2,7 @@ local class = require 'middleclass'
 local bump = require 'bump'
 local State = require 'State/State'
 local Camera = require 'Camera'
+local Level = require 'Level'
 
 require 'MakeEntity'
 
