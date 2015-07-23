@@ -37,9 +37,11 @@ function OverworldState:update(dt)
 end
 
 function OverworldState:draw()
+    self.camera:set()
     self.player:draw()
     self.level:draw()
     love.graphics.rectangle('fill', 0, 400, 6000, 10)
+    self.camera:pop()
 end
 
 function OverworldState:keypressed(key)
