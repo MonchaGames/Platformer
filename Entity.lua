@@ -12,6 +12,8 @@ function Entity:initialize(GraphicsComponent, InputComponent, PhysicsComponent)
     self.friction = 10
     self.speed = 7000
 
+    self.direction = 0
+
     self.GraphicsComponent = GraphicsComponent or Component:new()
     self.InputComponent = InputComponent or Component:new()
     self.PhysicsComponent = PhysicsComponent or Component:new()

@@ -8,8 +8,8 @@ PlayerGraphicsComponent = class("PlayerGraphicsComponent")
 function PlayerGraphicsComponent:initialize()
     self.x = 0
     self.y = 0
-    self.width = 30
-    self.height = 30
+    self.width = 50
+    self.height = 50
 end
 
 function PlayerGraphicsComponent:update(dt, Entity)
@@ -21,7 +21,7 @@ function PlayerGraphicsComponent:update(dt, Entity)
 end
 
 function PlayerGraphicsComponent:draw()
-    love.graphics.rectangle('fill', self.x, self.y, 50, 50)
+    love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
 end
 
 PlayerInputComponent = class("PlayerInputComponent")
@@ -49,9 +49,11 @@ function PlayerInputComponent:update(dt, Entity)
         Entity.vy = Entity.vy + speed * dt
     end
     if self.left then
+        Entity.direction = 1
         Entity.vx = Entity.vx - speed * dt
     end
     if self.right then
+        Entity.direction = 0
         Entity.vx = Entity.vx + speed * dt
     end
 

@@ -1,5 +1,6 @@
 local Entity = require 'Entity'
 local PlayerComponent = require 'Components/PlayerComponent'
+local GunComponent = require 'Components/GunComponent'
 
 make = {}
 
@@ -9,3 +10,9 @@ function make.make_player(world)
     PlayerInputComponent:new(),
     PlayerPhysicsComponent:new(world))
 end
+
+function make.make_gun(player)
+    
+    return Entity:new(GunGraphicsComponent:new(), GunInputComponent:new(player))
+end
+

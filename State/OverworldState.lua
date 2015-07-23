@@ -17,6 +17,7 @@ end
 
 function OverworldState:enter(params, parent)
     self.player = params.player or make.make_player(self.world)
+    self.gun = make.make_gun(self.player)
     self.parent = parent
     self.camera = Camera:new(self.player)
 end
@@ -30,6 +31,7 @@ end
 function OverworldState:update(dt)
     self.camera:update(dt)
     self.player:update(dt)
+    self.gun:update(dt)
     self.level:update(dt)
     if love.keyboard.isDown(' ') then
         self.parent:switch('State')
@@ -39,6 +41,7 @@ end
 function OverworldState:draw()
     self.camera:set()
     self.player:draw()
+    self.gun:draw()
     self.level:draw()
     love.graphics.rectangle('fill', 0, 400, 6000, 10)
     self.camera:pop()
