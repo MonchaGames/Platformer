@@ -17,7 +17,7 @@ end
 
 function OverworldState:enter(params, parent)
     self.player = params.player or make.make_player(self.world)
-    self.gun = make.make_gun(self.player)
+    self.gun = make.make_gun(self.player, self.world)
     self.parent = parent
     self.camera = Camera:new(self.player)
 end

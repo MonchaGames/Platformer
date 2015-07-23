@@ -11,8 +11,8 @@ function make.make_player(world)
     PlayerPhysicsComponent:new(world))
 end
 
-function make.make_gun(player)
+function make.make_gun(player, world)
     
-    return Entity:new(GunGraphicsComponent:new(), GunInputComponent:new(player))
+    return Entity:new(GunGraphicsComponent:new(), GunInputComponent:new(player, world))
 end
 

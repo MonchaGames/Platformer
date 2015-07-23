@@ -11,6 +11,7 @@ function Entity:initialize(GraphicsComponent, InputComponent, PhysicsComponent)
     self.ground = false
     self.friction = 10
     self.speed = 7000
+    self.special = ""
 
     self.direction = 0
 
